@@ -1,4 +1,4 @@
-# CareSync 24/7 - AI-Powered Healthcare Platform
+# # CareSync 24/7 - AI-Powered Healthcare Platform
 
 ## 🚀 About the Project
 CareSync 24/7 is an AI-powered real-time healthcare platform designed to provide medical assistance in rural areas. It enables users to track ambulances, consult doctors, check medicine availability, and request emergency help instantly.
@@ -15,24 +15,23 @@ CareSync 24/7 is an AI-powered real-time healthcare platform designed to provide
 CareSync-24x7/
 │── web/                # Web version (HTML, CSS, JavaScript)
 │── app/                # Mobile version (Android/iOS)
-│── backend/            # Backend APIs (Node.js/Django)
+│── backend/            # Backend using JavaScript & LocalStorage
 │── docs/               # Documentation & reports
 │── README.md           # Project overview
 ```
 
 ## 📌 Technologies Used
 ### **Frontend:**
-- React.js / Angular (Web)
+- HTML, CSS, JavaScript (Web)
 - React Native / Flutter (Mobile)
 
 ### **Backend:**
-- Node.js / Django (API Development)
-- MySQL / MongoDB (Database)
+- JavaScript (LocalStorage-based data handling)
 
 ### **Other Tools:**
 - Google Maps API (Ambulance Tracking)
 - WebRTC (Video Consultation)
-- LocalStorage (Medicine Availability Tracking)
+- LocalStorage (Data Storage & Availability Tracking)
 
 ## 🔧 Installation & Setup
 ### **For Web App:**
@@ -52,6 +51,7 @@ react-native run-android  # If using React Native
 - **AI-Powered Health Monitoring**
 - **Drone-Based Medicine Delivery**
 - **Integration with Government Healthcare Schemes**
+- **Cloud Database Migration (MongoDB, MySQL)**
 
 ## 🤝 Contribution
 1. Fork the repo.
