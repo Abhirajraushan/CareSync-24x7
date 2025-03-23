@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" /> 
+      <link rel="stylesheet" href="styles.css" />
+      <title>CareSync 24/7</title>
+    </head>
+    
+    <!-- Link to doctor.css -->
+    <title>Consult a Doctor - CareSync</title>
+  </head>
+  <body>
+    <header>
+      <nav class="section_container nav_container">
+        <div class="nav__logo">Care<span>Sync</span></div>
+        <ul class="nav__links">
+          <li class="link"><a href="index.html">Home</a></li>
+          <li class="link"><a href="#about">About Us</a></li>
+          <li class="link"><a href="#service">Services</a></li>
+        </ul>
+      </nav>
+    </header>
+
+      <!-- doctors section -->
+      <!-- doctors section -->
+      <section class="section_container feature_container">
+        <h2 class="section__header">Consult a Doctor</h2>
+        <p>Book an appointment with a qualified doctor.</p>
+        <form id="doctorForm">
+          <input type="text" id="doctorName" placeholder="Doctor's Name" required />
+        
+          <select id="department">
+            <option value="">Select Department</option>
+            <option value="Cardiology">Cardiology</option>
+            <option value="Neurology">Neurology</option>
+            <option value="Dermatology">Dermatology</option>
+          </select>
+         
+         
+          <input type="date" id="appointmentDate" required />
+          <button type="submit" class="btn">Book Appointment</button>
+
+        </form>
+        <div id="appointmentResult" style="margin-top: 1rem;"></div>
+      </section>
+      <section class="section__container doctors__container" id="pages">
+        <div class="doctors__header">
+          <div class="doctors__header__content">
+            <h2 class="section__header">Our Special Doctors</h2>
+            <p>
+              We take pride in our exceptional team of doctors, each a specialist
+              in their respective fields.
+            </p>
+          </div>
+          <div class="doctors__nav">
+            <span><i class="ri-arrow-left-line"></i></span>
+            <span><i class="ri-arrow-right-line"></i></span>
+          </div>
+        </div>
+        <div class="doctors__grid">
+          <div class="doctors__card">
+            <div class="doctors__card__image">
+              <img src="assets/Dr_Anushtha_Shastri.jpg" alt="doctor" />
+              <div class="doctors__socials">
+                <span><i class="ri-instagram-line"></i></span>
+                <span><i class="ri-facebook-fill"></i></span>
+                <span><i class="ri-heart-fill"></i></span>
+                <span><i class="ri-twitter-fill"></i></span>
+              </div>
+            </div>
+            <h4>Dr. Anushtha Shastri</h4>
+            <p>Cardiologist</p>
+          </div>
+          <div class="doctors__card">
+            <div class="doctors__card__image">
+              <img
+                src="assets/DALL·E 2025-03-12 15.31.03 - A knowledgeable and confident male neurosurgeon named Dr. R.K. Rao, around 45 years old, with a well-groomed beard and glasses. He has 10 years of med.webp"
+                alt="doctor" />
+              <div class="doctors__socials">
+                <span><i class="ri-instagram-line"></i></span>
+                <span><i class="ri-facebook-fill"></i></span>
+                <span><i class="ri-heart-fill"></i></span>
+                <span><i class="ri-twitter-fill"></i></span>
+              </div>
+            </div>
+            <h4>Dr. R.K. Rao</h4>
+            <p>Neurosurgeon</p>
+          </div>
+          <div class="doctors__card">
+            <div class="doctors__card__image">
+              <img src="assets/3rd.webp" alt="doctor" />
+              <div class="doctors__socials">
+                <span><i class="ri-instagram-line"></i></span>
+                <span><i class="ri-facebook-fill"></i></span>
+                <span><i class="ri-heart-fill"></i></span>
+                <span><i class="ri-twitter-fill"></i></span>
+              </div>
+            </div>
+            <h4>Dr. M. Umale</h4>
+            <p>Dermatologist</p>
+          </div>
+        </div>
+      </section>
+  
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="section__container footer__container">
+      <div class="footer__col">
+        <h3>Care<span>Sync</span></h3>
+        <p>
+          At <strong>CareSync</strong>, we bridge the healthcare gap in rural areas by providing
+          <strong>real-time medical services</strong>. Our mission is to ensure accessible,
+          affordable, and technology-driven healthcare solutions for everyone.
+        </p>
+        <p>
+          With <strong>24/7 emergency support</strong>, virtual doctor consultations, and real-time
+          medicine availability, we are committed to your health and well-being.
+        </p>
+      </div>
+      <div class="footer__col">
+        <h4>Quick Links</h4>
+        <p><a href="#home">Home</a></p>
+        <p><a href="#about">About Us</a></p>
+        <p><a href="#service">Emergency Services</a></p>
+        <p><a href="#appointment">Book Appointment</a></p>
+        <p><a href="#terms">Terms & Conditions</a></p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Our Services</h4>
+        <p><a href="#">24/7 Emergency Assistance</a></p>
+        <p><a href="#">Virtual Doctor Consultations</a></p>
+        <p><a href="#">Medicine Availability</a></p>
+        <p><a href="#">Ambulance Tracking</a></p>
+        <p><a href="#">Health Checkups</a></p>
+      </div>
+      <div class="footer__col">
+        <h4>Contact Us</h4>
+        <p><i class="ri-map-pin-2-fill"></i> Lokmanya Nagar, Nagpur, India 441110</p>
+        <p><i class="ri-mail-fill"></i> support@caresync.com</p>
+        <p><i class="ri-phone-fill"></i> +91 88888 12345</p>
+      </div>
+    </div>
+    <div class="footer__bar">
+      <div class="footer__bar__content">
+        <p>&copy; 2025 CareSync 24/7. All rights reserved.</p>
+        <div class="footer__socials">
+          <a href="#"><i class="ri-instagram-line"></i></a>
+          <a href="#"><i class="ri-facebook-fill"></i></a>
+          <a href="#"><i class="ri-linkedin-fill"></i></a>
+          <a href="#"><i class="ri-twitter-fill"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Ambulance Tracking
+    function initMap() {
+      const map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: 20.5937, lng: 78.9629 }, // Default location (India)
+        zoom: 6,
+      });
+
+      // Dummy ambulance location
+      const ambulanceLocation = { lat: 20.5937, lng: 78.9629 };
+      new google.maps.Marker({
+        position: ambulanceLocation,
+        map,
+        title: "Ambulance Location",
+      });
+    }
+
+    document.getElementById("trackAmbulanceBtn").addEventListener("click", () => {
+      initMap();
+    });
+
+    // Medicine Availability
+    const medicineData = [
+      { name: "Paracetamol", available: true, store: "MedPlus" },
+      { name: "Ibuprofen", available: false, store: "Apollo Pharmacy" },
+      { name: "Amoxicillin", available: true, store: "Wellness Forever" },
+    ];
+
+    document.getElementById("checkMedicineBtn").addEventListener("click", () => {
+      const medicineName = document.getElementById("medicineInput").value;
+      const resultDiv = document.getElementById("medicineResult");
+      const medicine = medicineData.find((med) => med.name === medicineName);
+
+      if (medicine) {
+        if (medicine.available) {
+          resultDiv.innerHTML = `<p>${medicine.name} is available at ${medicine.store}.</p>`;
+        } else {
+          resultDiv.innerHTML = `<p>${medicine.name} is currently out of stock.</p>`;
+        }
+      } else {
+        resultDiv.innerHTML = `<p>Medicine not found.</p>`;
+      }
+    });
+
+    // Consult a Doctor
+    document.getElementById("doctorForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const doctorName = document.getElementById("doctorName").value;
+      const appointmentDate = document.getElementById("appointmentDate").value;
+      const resultDiv = document.getElementById("appointmentResult");
+
+      resultDiv.innerHTML = `<p>Appointment booked with ${doctorName} on ${appointmentDate}.</p>`;
+    });
+
+    // Emergency Services
+    document.getElementById("callEmergencyBtn").addEventListener("click", () => {
+      window.location.href = "tel:+911234567890"; // Replace with your emergency number
+    });
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+
+
+    <script>
+      // Fetch Doctor Details (User Side)
+      document.addEventListener("DOMContentLoaded", () => {
+        const doctors = JSON.parse(localStorage.getItem("doctors")) || [];
+        const doctorList = document.getElementById("doctorList");
+
+        if (doctors.length > 0) {
+            doctorList.innerHTML = doctors.map(doctor => 
+                `<div class="doctor-card">
+                    <h3>${doctor.name}</h3>
+                    <p>Specialization: ${doctor.specialization}</p>
+                </div>`
+            ).join("");
+        } else {
+            doctorList.innerHTML = "<p>No doctors available.</p>";
+        }
+      });
+
+      // Appointment Data
+      let appointments = JSON.parse(localStorage.getItem("appointments")) || [];
+
+      // Book Appointment
+      document.getElementById("doctorForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const doctorName = document.getElementById("doctorName").value;
+        const appointmentDate = document.getElementById("appointmentDate").value;
+        appointments.push({ doctorName, appointmentDate });
+        localStorage.setItem("appointments", JSON.stringify(appointments));
+        updateReminderList();
+        document.getElementById("appointmentResult").innerHTML = `<p>Appointment booked with ${doctorName} on ${appointmentDate}.</p>`;
+      });
+
+      // Update Reminder List
+      function updateReminderList() {
+        const reminderList = document.getElementById("reminderList");
+        reminderList.innerHTML = appointments.map(appointment => 
+          `<p>${appointment.doctorName} on ${appointment.appointmentDate}</p>`
+        ).join("");
+      }
+
+      // Load Reminders on Page Load
+      updateReminderList();
+    </script>
+  </body>
+</html>

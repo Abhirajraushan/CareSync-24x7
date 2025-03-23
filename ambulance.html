@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/ambulance.css" /> 
+     <link rel="stylesheet" href="styles.css" />
+    <!-- Link to ambulance.css -->
+    <title>Ambulance Tracking - CareSync</title>
+  </head>
+  <body>
+    <header>
+      <nav class="section_container nav_container">
+        <div class="nav__logo">Care<span>Sync</span></div>
+        <ul class="nav__links">
+          <li class="link"><a href="index.html">Home</a></li>
+          <li class="link"><a href="#about">About Us</a></li>
+          <li class="link"><a href="#service">Services</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="section_container feature_container">
+      <h2 class="section__header">Ambulance Tracking</h2>
+      <p>Track the nearest ambulance in real-time.</p>
+      <button id="trackAmbulanceBtn" class="btn">Track Ambulance</button>
+      <div id="map" style="height: 400px; width: 100%; margin-top: 1rem; border-radius: 10px;"></div>
+      
+      <!-- Ambulance Request Section -->
+      <div id="ambulanceRequestSection" style="margin-top: 2rem;">
+        <button id="requestAmbulanceBtn" class="btn">Request Ambulance</button>
+        <div id="ambulanceRequestStatus" style="margin-top: 1rem;"></div>
+      </div>
+    </section>
+
+    <script>
+      // Track Ambulance (User Side)
+      document.getElementById("trackAmbulanceBtn").addEventListener("click", () => {
+        const location = localStorage.getItem("ambulanceLocation");
+        if (location) {
+            const [lat, lng] = location.split(",").map(Number); // Convert string to lat, lng
+            initMap(lat, lng); // Pass lat, lng to initMap
+        } else {
+            document.getElementById("ambulanceStatus").innerHTML = `<p>Ambulance location not available.</p>`;
+        }
+      });
+
+      // Initialize Map with Ambulance Location
+      function initMap(lat = 20.5937, lng = 78.9629) {
+        const map = new google.maps.Map(document.getElementById("map"), {
+            center: { lat, lng }, // Use provided lat, lng
+            zoom: 12, // Zoom level for better visibility
+        });
+
+        // Add marker for ambulance location
+        new google.maps.Marker({
+            position: { lat, lng },
+            map,
+            title: "Ambulance Location",
+        });
+      }
+
+      // Ambulance Request
+      document.getElementById("requestAmbulanceBtn").addEventListener("click", () => {
+        const statusDiv = document.getElementById("ambulanceRequestStatus");
+        statusDiv.innerHTML = "<p>Ambulance requested. Tracking location...</p>";
+        // Simulate ambulance arrival
+        setTimeout(() => {
+          statusDiv.innerHTML += "<p>Ambulance is 5 minutes away.</p>";
+        }, 5000);
+      });
+    </script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+      async
+      defer
+    ></script>
+  </body>
+</html>

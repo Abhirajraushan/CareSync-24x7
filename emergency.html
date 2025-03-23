@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/emergency.css" /> 
+      <link rel="stylesheet" href="styles.css" />
+  
+     <!-- Link to emergency.css -->
+    <title>Emergency Services - CareSync</title>
+  </head>
+  <body>
+    <header>
+      <nav class="section_container nav_container">
+        <div class="nav__logo">Care<span>Sync</span>24/7</div>
+        <ul class="nav__links">
+          <li class="link"><a href="index.html">Home</a></li>
+          <li class="link"><a href="#about">About Us</a></li>
+          <li class="link"><a href="#service">Services</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="section_container feature_container">
+      <h2 class="section__header">Emergency Services</h2>
+      <p>Call emergency helpline for immediate assistance.</p>
+      <button id="callEmergencyBtn" class="btn">Call Emergency</button>
+      <div id="emergencyStatus" style="margin-top: 1rem;"></div>
+    </section>
+
+    <script>
+      // Emergency Call
+      document.getElementById("callEmergencyBtn").addEventListener("click", () => {
+        const statusDiv = document.getElementById("emergencyStatus");
+        statusDiv.innerHTML = "<p>Calling emergency helpline...</p>";
+        // Simulate call initiation
+        setTimeout(() => {
+          statusDiv.innerHTML += "<p>Connected to emergency services.</p>";
+        }, 2000);
+        // Redirect to phone call (replace with actual emergency number)
+        window.location.href = "tel:+911234567890";
+      });
+    </script>
+  </body>
+</html>

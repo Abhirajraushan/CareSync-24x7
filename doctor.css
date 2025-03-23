@@ -1,0 +1,87 @@
+/* Doctor Consultation Page Styles */
+.feature_container {
+  padding: 5rem 1rem;
+  text-align: center;
+}
+
+.feature_container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333333; /* Dark text color */
+}
+
+.feature_container p {
+  font-size: 1.2rem;
+  color: #767268; /* Light text color */
+  margin-bottom: 2rem;
+}
+
+#doctorForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+#doctorForm input {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #12ac8e; /* Primary color border */
+  outline: none;
+  background-color: #e9f7f7; /* Light background */
+  color: #12ac8e; /* Primary color text */
+}
+
+#doctorForm input::placeholder {
+  color: #12ac8e; /* Primary color placeholder */
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #12ac8e; /* Primary color background */
+  color: #ffffff; /* White text */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #0d846c; /* Darker shade of primary color */
+}
+
+#appointmentResult, #reminderList {
+  font-size: 1.2rem;
+  color: #333333;
+}
+
+#appointmentReminder {
+  margin-top: 2rem;
+}
+
+#appointmentReminder h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #333333;
+}
+
+/* Responsive Design */
+@media (width < 600px) {
+  .feature_container h2 {
+    font-size: 2rem;
+  }
+
+  .feature_container p {
+    font-size: 1rem;
+  }
+
+  #doctorForm input,
+  .btn {
+    width: 100%;
+    padding: 0.75rem;
+  }
+}

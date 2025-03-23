@@ -1,0 +1,61 @@
+/* Ambulance Tracking Page Styles */
+.feature_container {
+  padding: 5rem 1rem;
+  text-align: center;
+}
+
+.feature_container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333333; /* Use your existing color variables if needed */
+}
+
+.feature_container p {
+  font-size: 1.2rem;
+  color: #767268; /* Use your existing color variables if needed */
+  margin-bottom: 2rem;
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+  margin-top: 1rem;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #12ac8e; /* Primary color */
+  color: #ffffff; /* White text */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #0d846c; /* Darker shade of primary color */
+}
+
+#ambulanceRequestStatus {
+  font-size: 1.2rem;
+  color: #333333;
+}
+
+/* Responsive Design */
+@media (width < 600px) {
+  .feature_container h2 {
+    font-size: 2rem;
+  }
+
+  .feature_container p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 0.75rem;
+  }
+}

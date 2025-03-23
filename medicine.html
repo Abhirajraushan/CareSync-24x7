@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/medicine.css" /> <!-- Link to medicine.css -->
+    <link rel="stylesheet" href="styles.css" />
+    <title>Medicine Availability - CareSync</title>
+  </head>
+  <body>
+    <header>
+      <nav class="section_container nav_container">
+        <div class="nav__logo">Care<span>Sync</span></div>
+        <ul class="nav__links">
+          <li class="link"><a href="index.html">Home</a></li>
+          <li class="link"><a href="#about">About Us</a></li>
+          <li class="link"><a href="#service">Services</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="section_container feature_container">
+      <h2 class="section__header">Medicine Availability</h2>
+      <p>Check medicine availability in nearby stores.</p>
+      <input type="text" id="medicineInput" placeholder="Enter medicine name" />
+      <button id="checkMedicineBtn" class="btn">Check Availability</button>
+      <div id="medicineResult" style="margin-top: 1rem;"></div>
+
+      <!-- Pre-Order Section -->
+      <div id="preOrderSection" style="margin-top: 2rem;">
+        <button id="preOrderBtn" class="btn">Pre-Order Medicine</button>
+        <div id="preOrderStatus" style="margin-top: 1rem;"></div>
+      </div>
+    </section>
+
+    <script>
+      // Medicine Availability Data
+      const medicineData = [
+        { name: "Paracetamol", available: true, store: "MedPlus" },
+        { name: "Ibuprofen", available: false, store: "Apollo Pharmacy" },
+        { name: "Amoxicillin", available: true, store: "Wellness Forever" },
+      ];
+
+      // Check Medicine Availability (User Side)
+document.getElementById("checkMedicineBtn").addEventListener("click", () => {
+    const medicineName = document.getElementById("medicineInput").value;
+    const resultDiv = document.getElementById("medicineResult");
+    const medicineData = JSON.parse(localStorage.getItem("medicineData")) || [];
+    const medicine = medicineData.find((med) => med.name.toLowerCase() === medicineName.toLowerCase());
+
+    if (medicine) {
+        if (medicine.available) {
+            resultDiv.innerHTML = `<p>${medicine.name} is available at ${medicine.store}.</p>`;
+        } else {
+            resultDiv.innerHTML = `<p>${medicine.name} is currently out of stock.</p>`;
+        }
+    } else {
+        resultDiv.innerHTML = `<p>Medicine not found.</p>`;
+    }
+});
+      // Pre-Order Medicine
+      document.getElementById("preOrderBtn").addEventListener("click", () => {
+        const medicineName = document.getElementById("medicineInput").value;
+        const statusDiv = document.getElementById("preOrderStatus");
+        if (medicineName) {
+          statusDiv.innerHTML = `<p>Pre-ordered ${medicineName}. You will receive a confirmation soon.</p>`;
+        } else {
+          statusDiv.innerHTML = "<p>Please enter a medicine name.</p>";
+        }
+      });
+    </script>
+  </body>
+</html>

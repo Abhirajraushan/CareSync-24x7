@@ -1,0 +1,53 @@
+/* Emergency Services Page Styles */
+.feature_container {
+  padding: 5rem 1rem;
+  text-align: center;
+}
+
+.feature_container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333333; /* Dark text color */
+}
+
+.feature_container p {
+  font-size: 1.2rem;
+  color: #767268; /* Light text color */
+  margin-bottom: 2rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #fb923c; /* Secondary color */
+  color: #ffffff; /* White text */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #e67e22; /* Darker shade of secondary color */
+}
+
+#emergencyStatus {
+  font-size: 1.2rem;
+  color: #333333;
+}
+
+/* Responsive Design */
+@media (width < 600px) {
+  .feature_container h2 {
+    font-size: 2rem;
+  }
+
+  .feature_container p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 0.75rem;
+  }
+}

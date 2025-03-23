@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+     <!-- Link to admin.css -->
+    <title>Admin Dashboard - CareSync</title>
+</head>
+<body>
+    <header>
+        <nav class="section_container nav_container">
+            <div class="nav__logo">Care<span>Sync</span> Admin</div>
+            <ul class="nav__links">
+                <li class="link"><a href="index.html">User Side</a></li>
+                <li class="link"><a href="#ambulance">Ambulance</a></li>
+                <li class="link"><a href="#doctor">Doctors</a></li>
+                <li class="link"><a href="#medicine">Medicine</a></li>
+                <li class="link"><a href="#emergency">Emergency</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="section_container admin_container">
+        <!-- Admin Login Section -->
+        <div id="loginSection" class="admin_section">
+            <h3>Admin Login</h3>
+            <form id="loginForm">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+
+        <!-- Admin Dashboard (Hidden by Default) -->
+        <div id="dashboard" style="display: none;">
+            <h2 class="section__header">Admin Dashboard</h2>
+            <button id="logoutBtn" class="btn logout-btn">Logout</button>
+
+            <!-- Ambulance Management -->
+            <div id="ambulance" class="admin_section">
+                <h3>Ambulance Tracking</h3>
+                <form id="ambulanceForm">
+                    <input type="text" id="ambulanceLocation" placeholder="Enter Ambulance Location (Lat, Lng)" required>
+                    <button type="submit" class="btn">Update Ambulance Location</button>
+                </form>
+                <div id="ambulanceStatus" style="margin-top: 1rem;"></div>
+            </div>
+
+            <!-- Doctor Management -->
+            <div id="doctorManagement" class="admin_section">
+                <h3>Manage Doctors</h3>
+                <form id="addDoctorForm">
+                    <input type="text" id="doctorName" placeholder="Doctor's Name" required>
+                    <input type="text" id="doctorSpecialization" placeholder="Specialization" required>
+                    <button type="submit" class="btn">Add Doctor</button>
+                </form>
+                <div id="doctorList" style="margin-top: 1rem;"></div>
+            </div>
+
+            <!-- Medicine Availability Management -->
+            <div id="medicine" class="admin_section">
+                <h3>Medicine Availability</h3>
+                <form id="medicineForm">
+                    <input type="text" id="medicineName" placeholder="Medicine Name" required>
+                    <input type="text" id="storeName" placeholder="Store Name" required>
+                    <button type="submit" class="btn">Update Medicine Availability</button>
+                </form>
+                <div id="medicineStatus" style="margin-top: 1rem;"></div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Admin Login
+        document.getElementById("loginForm").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Hardcoded credentials (replace with API call in production)
+            if (username === "admin" && password === "admin123") {
+                document.getElementById("loginSection").style.display = "none";
+                document.getElementById("dashboard").style.display = "block";
+            } else {
+                alert("Invalid credentials");
+            }
+        });
+
+        // Logout
+        document.getElementById("logoutBtn").addEventListener("click", () => {
+            document.getElementById("loginSection").style.display = "block";
+            document.getElementById("dashboard").style.display = "none";
+        });
+
+        // Ambulance Management
+document.getElementById("ambulanceForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const location = document.getElementById("ambulanceLocation").value;
+    localStorage.setItem("ambulanceLocation", location);
+    document.getElementById("ambulanceStatus").innerHTML = `<p>Ambulance location updated to: ${location}</p>`;
+});
+
+        // Doctor Management
+let doctors = JSON.parse(localStorage.getItem("doctors")) || [];
+
+document.getElementById("addDoctorForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = document.getElementById("doctorName").value;
+    const specialization = document.getElementById("doctorSpecialization").value;
+    doctors.push({ name, specialization });
+    localStorage.setItem("doctors", JSON.stringify(doctors));
+    updateDoctorList();
+});
+
+function updateDoctorList() {
+    const doctorList = document.getElementById("doctorList");
+    doctorList.innerHTML = doctors.map(doctor => 
+        `<p>${doctor.name} - ${doctor.specialization} <button onclick="deleteDoctor('${doctor.name}')">Delete</button></p>`
+    ).join("");
+}
+
+function deleteDoctor(name) {
+    doctors = doctors.filter(doctor => doctor.name !== name);
+    localStorage.setItem("doctors", JSON.stringify(doctors));
+    updateDoctorList();
+}
+
+updateDoctorList();
+
+      // Medicine Availability Management
+document.getElementById("medicineForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const medicineName = document.getElementById("medicineName").value;
+    const storeName = document.getElementById("storeName").value;
+    const medicineData = JSON.parse(localStorage.getItem("medicineData")) || [];
+    medicineData.push({ name: medicineName, store: storeName, available: true });
+    localStorage.setItem("medicineData", JSON.stringify(medicineData));
+    document.getElementById("medicineStatus").innerHTML = `<p>${medicineName} availability updated at ${storeName}</p>`;
+});
+    </script>
+</body>
+</html>
